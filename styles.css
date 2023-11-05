@@ -1,0 +1,264 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+body{
+    background-color: #fbc8d6;
+}
+
+
+/* title */
+.title{
+    text-align: center;
+    padding: 20px;
+}
+
+.main-title{
+    color: #eb2626;
+}
+
+
+/* primer texto */
+.card-reactive {
+    display: flex;
+    justify-content: space-around;
+}
+
+.card {
+    width: 30%;
+    height: auto; /* Cambiamos esto para que la altura se ajuste automáticamente al contenido */
+    background-color: #ccc;
+    text-align: center;
+    padding: 10px; /* Agregamos un relleno para separar el texto del borde */
+    font-size: 14px;
+    display: flex;
+    flex-direction: column; /* Colocamos el contenido uno encima del otro */
+    align-items: center; /* Centramos el contenido verticalmente */
+    border-radius: 30px;
+    background-color: #f0a1a5;
+}
+
+.card-title{
+    padding: 10px;
+    color: #292727;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.toggle-button {
+    border-radius: 5px;
+    background-color: #fbc8d6;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Agregamos una transición al color de fondo */
+}
+
+.toggle-button:hover {
+    background-color: #fe7f6c; /* Cambiamos el color de fondo en hover */
+    color: white;
+}
+
+.respuesta {
+    padding: 5px;
+    display: none; /* Inicialmente oculta la respuesta */
+}
+
+#comer-button:focus + .respuesta {
+    display: block;
+}
+
+
+
+/* segundo texto */
+.two-phara{
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+}
+
+.parra {
+    width: 30%;
+     /* Cambiar a 'max-height' en lugar de 'height' */
+    overflow-y: auto; /* Agregar desplazamiento vertical si el contenido es demasiado largo */
+    background-color: #ccc;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 30px;
+    padding: 10px; /* Agregar relleno para separar el contenido del borde */
+    line-height: 1.4; /* Aumentar la altura de línea para una mejor legibilidad */
+    background-color: #fe7f6c;
+}
+
+.parra-title{
+    color: white;
+}
+
+.heart .image{
+    width: 100%;
+    height: 90%;
+}
+
+
+
+
+/* marquee */
+.marquee {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: marquee 12s linear infinite; /* Velocidad y dirección de desplazamiento */
+    display: flex;
+    justify-content: center; /* Centra horizontalmente en el contenedor */
+    align-items: center; /* Centra verticalmente en el contenedor */
+    
+}
+
+.marquee .content-marquee {
+    width: 100px;
+    height: 100px;
+    background-color: #ccc;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente dentro del elemento */
+    align-items: center; /* Centra verticalmente dentro del elemento */
+    margin-right: 20px;
+    animation: marquee-item 30s linear infinite;
+    font-weight: 300;
+    font-size: 30px;
+    background-color: #f70424;
+    color: rgb(233, 224, 224);
+}
+
+.marquee .content-marquee:last-child {
+    margin-right: 0; /* Elimina el margen derecho del último elemento */
+}
+
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+@keyframes marquee-item {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* parrafo */
+
+
+.parrafo{
+    text-align: center;
+    padding: 10px;
+}
+
+.parrafo-content{
+    font-weight: 200;
+    font-size: 16px;
+}
+
+/* footer */
+.footer{
+    text-align: center;
+    
+}
+
+.footer-content{
+    font-weight: 100;
+    font-size: 12px;
+}
+
+
+/* Media query para dispositivos móviles */
+@media (max-width: 768px) {
+    /* Cambios específicos para dispositivos móviles */
+    .card {
+        width: 100%;
+        margin: 10px;
+    }
+
+    .parra {
+        width: 100%;
+        margin: 10px;
+        max-height: none;
+    }
+
+    .content-marquee {
+        font-size: 20px;
+    }
+
+    .parra-title {
+        font-size: 20px;
+    }
+
+    .heart {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .heart .image {
+        width: 100%;
+        height: auto;
+        margin-top: 10px; /* Agregar margen superior entre las imágenes */
+    }
+
+    /* Asegúrate de ajustar otros estilos según sea necesario para una mejor apariencia en dispositivos móviles */
+
+    .mainpage {
+        overflow-x: hidden; /* Evitar el desplazamiento horizontal en dispositivos móviles */
+    }
+    
+    /* Ajustes para evitar el desbordamiento de contenido en dispositivos móviles */
+    body {
+        overflow-x: hidden;
+    }
+    .two-phara {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .parra {
+        width: 100%;
+        max-height: none;
+    }
+}
+
+/* Media query para dispositivos con un ancho máximo de 320px */
+@media (max-width: 320px) {
+    .card {
+        width: 100%; /* Ocupa todo el ancho en lugar de 1 en 3 */
+        margin: 5px 0; /* Elimina el margen izquierdo y derecho, agrega un margen superior e inferior */
+    }
+
+    .parra {
+        width: 100%; /* Ocupa todo el ancho en lugar de 1 en 3 */
+        margin: 5px 0; /* Elimina el margen izquierdo y derecho, agrega un margen superior e inferior */
+    }
+
+    .card-reactive {
+        flex-direction: column; /* Coloca las tarjetas uno encima del otro */
+        align-items: center; /* Centra horizontalmente las tarjetas */
+    }
+}
+
+/* Media query para dispositivos con un ancho máximo de 375px */
+@media (max-width: 375px) {
+    .card {
+        width: 100%; /* Ocupa todo el ancho en lugar de 1 en 3 */
+        margin: 5px 0; /* Elimina el margen izquierdo y derecho, agrega un margen superior e inferior */
+    }
+
+    .parra {
+        width: 100%; /* Ocupa todo el ancho en lugar de 1 en 3 */
+        margin: 5px 0; /* Elimina el margen izquierdo y derecho, agrega un margen superior e inferior */
+    }
+
+    .card-reactive {
+        flex-direction: column; /* Coloca las tarjetas uno encima del otro */
+        align-items: center; /* Centra horizontalmente las tarjetas */
+    }
+}
+
+
